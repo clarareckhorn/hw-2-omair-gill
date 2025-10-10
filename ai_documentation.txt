@@ -34,3 +34,10 @@ Q: How to fix Binder errors (blackman/tukey)?
 A: One option: 
 signal.blackman(...) → signal.windows.blackman(...)
 signal.tukey(...) → signal.windows.tukey(...)
+
+Q: How do I rename the ligotools-pkg-3 to just ligotools-pkg
+A: git push origin --delete ligotools-pkg-3
+git tag -d ligotools-pkg-3
+git tag ligotools-pkg
+git push origin ligotools-pkg
+
