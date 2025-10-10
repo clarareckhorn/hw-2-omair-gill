@@ -1,0 +1,36 @@
+Q: how to get ligotools folder to work as a proper Python package
+A: Move the readligo.py file into a new folder called ligotools, then create an empty __init__.py file so Python recognizes it as a package.
+mkdir ligotools
+mv readligo.py ligotools/
+touch ligotools/__init__.py
+
+Q: How do I add a Git tag
+A: git add .
+git commit -m "Initial commit"
+git tag repo-basic
+git push origin repo-basic
+
+Q: How do I create a working Conda environment?
+A: Create environment.yml file (nano environment.yml) that defines dependencies needed for the notebook to run
+Paste this inside:
+
+name: ligo
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - scipy
+  - matplotlib
+  - h5py
+  - pandas
+  - ipykernel
+  - ipython
+  - decorator=5.1
+  - jupyterlab
+
+Q: How to fix Binder errors (blackman/tukey)?
+A: One option: 
+signal.blackman(...) → signal.windows.blackman(...)
+signal.tukey(...) → signal.windows.tukey(...)
